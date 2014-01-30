@@ -174,6 +174,8 @@ select count(type) from events group by time(10m), type;
 select percentile(value, 95) from response_times group by time(30s);
 ```
 
+The time bucket should be in terms of `us`, `ms`, `s`, `m` and `h`.
+
 ## Merging Series
 
 You can merge multiple time series into a single stream in the select clause. This is helpful when you want to run a function over one of the columns with an associated group by time clause.
